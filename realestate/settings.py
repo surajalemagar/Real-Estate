@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'locationandfeedback',
+    'accounts',
+    'bootstrap3',
 ]
 
 MIDDLEWARE = [
@@ -54,8 +56,9 @@ ROOT_URLCONF = 'realestate.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates',
-                 BASE_DIR / 'locationandfeedback/templates/locationandfeedback', ],
+        'DIRS': [BASE_DIR / 'realestate/templates/realestate',
+                 BASE_DIR / 'locationandfeedback/templates/locationandfeedback',
+                 BASE_DIR / 'accounts/templates/accounts', ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

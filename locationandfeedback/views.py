@@ -30,3 +30,7 @@ class MyFormView(View):
 
 class Thankyou(TemplateView):
     template_name = 'thankyou.html'
+
+
+class Post(TemplateView):
+    template_name = 'post.html'

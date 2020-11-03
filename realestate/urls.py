@@ -17,10 +17,9 @@ from django.contrib import admin
 from django.urls import path, include
 from . import views
 
-
 urlpatterns = [
     path('', views.Homepage.as_view(), name='homepage'),
+    path('accounts/', include('accounts.urls')),
     path('feedback/', include('locationandfeedback.urls')),
     path('admin/', admin.site.urls),
-
 ]
