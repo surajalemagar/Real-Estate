@@ -2,9 +2,9 @@ from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render, redirect
 from django.views import View
 from .forms import FeedbackForm
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, ListView
 from django.urls import reverse
-from .models import Rateapp
+from .models import Rateapp, Feedback
 
 
 class MyFormView(View):
@@ -28,9 +28,10 @@ class MyFormView(View):
         return render(request, self.template_name, {'form': form})
 
 
+class Feedback_List(ListView):
+    model = Feedback
+    template_name = 'feedback_list.html'
+
+
 class Thankyou(TemplateView):
     template_name = 'thankyou.html'
-
-
-class Post(TemplateView):
-    template_name = 'post.html'

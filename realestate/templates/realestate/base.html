@@ -22,11 +22,14 @@
     			<div class="container">
 
             <a class="navbar-brand mynav" href="{% url 'homepage' %}">Home</a>
+            <a class="navbar-brand mynav" href="http://127.0.0.1:8000/admin/">Admin</a>
 
     					<ul class="nav navbar-nav navbar-right">
-    						{% if user.is_authenticated %}
-                      <li><a href="{% url 'feedback:post' %}" class="btn btn-simple">Post</a></li>
+                {% if user.is_authenticated %}
+                      <li><a href="{% url 'post:postform' %}" class="btn btn-simple">Post</a></li>
+                      <li><a href="{% url 'post:post_list' %}" class="btn btn-simple">Check Post</a></li>
                       <li><a href="{% url 'feedback:myformview' %}" class="btn btn-simple">Feedback</a></li>
+                      <li><a href="{% url 'feedback:feedback_list' %}" class="btn btn-simple">See Feedback</a></li>
                       <li><a href="{% url 'accounts:logout' %}" class="btn btn-simple">Log out</a></li>
     						{% else %}
     						      <li><a href="{% url 'accounts:login' %}" class="btn btn-simple">Log in</a></li>
